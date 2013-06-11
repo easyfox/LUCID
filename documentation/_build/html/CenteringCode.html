@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Centering functions &mdash; LUCID v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="LUCID v1.0 documentation" href="index.html" />
+    <link rel="up" title="loopcen. The loop centering" href="LCCode.html" />
+    <link rel="next" title="Treatment facilities functions" href="FacilitiesCode.html" />
+    <link rel="prev" title="loopcen. The loop centering" href="LCCode.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="FacilitiesCode.html" title="Treatment facilities functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LCCode.html" title="loopcen. The loop centering"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">LUCID v1.0 documentation</a> &raquo;</li>
+          <li><a href="APIref.html" >LUCID API Reference</a> &raquo;</li>
+          <li><a href="LCCode.html" accesskey="U">loopcen. The loop centering</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-lucid">
+<h1>Centering functions<a class="headerlink" href="#module-lucid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="find-loop">
+<h2>find_loop<a class="headerlink" href="#find-loop" title="Permalink to this headline">¶</a></h2>
+<p>Launch detection with the pretreatment algorithm and a numpy array as input image</p>
+<p>The pretreat algorithm does a first work on the original image to light up the background and improve the recognition process. Blabla.</p>
+<dl class="function">
+<dt id="lucid.find_loop">
+<tt class="descclassname">lucid.</tt><tt class="descname">find_loop</tt><big>(</big><em>_numpyarray</em>, <em>zoom=0</em><big>)</big><a class="headerlink" href="#lucid.find_loop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>_numpyarray</em> (Numpy Array) &#8211; Array which represents the input image in grayscale</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="find-loop-byimg">
+<h2>find_loop_byimg<a class="headerlink" href="#find-loop-byimg" title="Permalink to this headline">¶</a></h2>
+<p>Launch detection with the pretreatment algorithm and a path for input image</p>
+<p>Pretreament algorithm explanations are available in find_loop function</p>
+<dl class="function">
+<dt id="lucid.find_loop_byimg">
+<tt class="descclassname">lucid.</tt><tt class="descname">find_loop_byimg</tt><big>(</big><em>_img</em>, <em>showVisuals=0</em><big>)</big><a class="headerlink" href="#lucid.find_loop_byimg" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>_img</em> (String) &#8211; Path of the input image</li>
+<li><em>showVisuals</em> &#8211; Show OpenCv visuals for testing and debug</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(label,x,y) result from loop_detection function</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="find-loop-byimg-testlauncher">
+<h2>find_loop_byimg_testlauncher<a class="headerlink" href="#find-loop-byimg-testlauncher" title="Permalink to this headline">¶</a></h2>
+<p>Special launch for unittests</p>
+<dl class="function">
+<dt id="lucid.find_loop_byimg_testlauncher">
+<tt class="descclassname">lucid.</tt><tt class="descname">find_loop_byimg_testlauncher</tt><big>(</big><em>_img</em><big>)</big><a class="headerlink" href="#lucid.find_loop_byimg_testlauncher" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>_img</em> (String) &#8211; Path of the input image</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(width,height,(label,x,y)) result from loop_detection function usable by unittests</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loop-detection-array">
+<h2>loop_detection_array<a class="headerlink" href="#loop-detection-array" title="Permalink to this headline">¶</a></h2>
+<p>Lauch detection of the loop with an array</p>
+<p>Convert numpy array to an IplImage (Opencv format) and lauch loop_detection</p>
+<dl class="function">
+<dt id="lucid.loop_detection_array">
+<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection_array</tt><big>(</big><em>_imgarr</em><big>)</big><a class="headerlink" href="#lucid.loop_detection_array" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>imgarr</em> (Numpy Array) &#8211; Array which represents the input image in grayscale</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loop-detection-path">
+<h2>loop_detection_path<a class="headerlink" href="#loop-detection-path" title="Permalink to this headline">¶</a></h2>
+<p><cite>Lauch detection of the loop with the image path</cite></p>
+<p>Load the image into an IplImage (Opencv format) and launch loop_detection</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="function">
+<dt id="lucid.loop_detection_path">
+<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection_path</tt><big>(</big><em>_imc_path</em>, <em>showVisuals=0</em><big>)</big><a class="headerlink" href="#lucid.loop_detection_path" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>imc_path</em> (String) &#8211; Input image path</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loop-detection">
+<h2>loop_detection<a class="headerlink" href="#loop-detection" title="Permalink to this headline">¶</a></h2>
+<p><cite>Detection of loops in image</cite></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The first treatment consist in a threshold amd a binarisation with local mean. The size of the windows is 45x45 pixels and the tolerence which is taken is six gray level difference. In fact, a window of 45x45 around the treated pixel is got. The mean of the gray levels of the area is calculated and it&#8217;s give us the local average of gray level.  If the pixel gray level is lower (because we want to have the loop in white) at nearly 6 gray level than the local average of gray level in his area, then it become white, else black.</p>
+<p>It can be illustrate by the formula :</p>
+<p><img alt="formule" class="align-middle" src="_images/adaptivethres.png" /></p>
+<p>In pratice, with a image we obtain something like :</p>
+<div class="floatleft figure align-center">
+<img alt="_images/base.png" src="_images/base.png" style="height: 300px;" />
+<p class="caption">Input image</p>
+</div>
+<div class="figure align-center">
+<img alt="_images/afterthresh.png" src="_images/afterthresh.png" style="height: 300px;" />
+<p class="caption">Output image</p>
+</div>
+<p>On exemple in the output image, the loop and some noise can be seen. First, delete the noise is needed. For this task, a median filter is used. It will be passed several time because more noise can appear in the image.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="function">
+<dt id="lucid.loop_detection">
+<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection</tt><big>(</big><em>_img</em><big>)</big><a class="headerlink" href="#lucid.loop_detection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>img</em> (IplImage (OpenCV Image type)) &#8211; Image in grayscale</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/esrflogo.jpg" alt="Logo"/>
+            </a></p>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Centering functions</a><ul>
+<li><a class="reference external" href="#find-loop">find_loop</a></li>
+<li><a class="reference external" href="#find-loop-byimg">find_loop_byimg</a></li>
+<li><a class="reference external" href="#find-loop-byimg-testlauncher">find_loop_byimg_testlauncher</a></li>
+<li><a class="reference external" href="#loop-detection-array">loop_detection_array</a></li>
+<li><a class="reference external" href="#loop-detection-path">loop_detection_path</a></li>
+<li><a class="reference external" href="#loop-detection">loop_detection</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="LCCode.html"
+                                  title="previous chapter">loopcen. The loop centering</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="FacilitiesCode.html"
+                                  title="next chapter">Treatment facilities functions</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/CenteringCode.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="FacilitiesCode.html" title="Treatment facilities functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LCCode.html" title="loopcen. The loop centering"
+             >previous</a> |</li>
+        <li><a href="index.html">LUCID v1.0 documentation</a> &raquo;</li>
+          <li><a href="APIref.html" >LUCID API Reference</a> &raquo;</li>
+          <li><a href="LCCode.html" >loopcen. The loop centering</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2013, ESRF.
+      Last updated on Mar 20, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

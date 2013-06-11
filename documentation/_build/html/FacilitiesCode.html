@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Treatment facilities functions &mdash; LUCID v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="LUCID v1.0 documentation" href="index.html" />
+    <link rel="up" title="loopcen. The loop centering" href="LCCode.html" />
+    <link rel="next" title="loopmesh. The loop meshing" href="LMCode.html" />
+    <link rel="prev" title="Centering functions" href="CenteringCode.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="LMCode.html" title="loopmesh. The loop meshing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="CenteringCode.html" title="Centering functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">LUCID v1.0 documentation</a> &raquo;</li>
+          <li><a href="APIref.html" >LUCID API Reference</a> &raquo;</li>
+          <li><a href="LCCode.html" accesskey="U">loopcen. The loop centering</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-lucid">
+<h1>Treatment facilities functions<a class="headerlink" href="#module-lucid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="white-detect">
+<h2>white_detect<a class="headerlink" href="#white-detect" title="Permalink to this headline">¶</a></h2>
+<p>Detection of number of white pixels</p>
+<dl class="function">
+<dt id="lucid.white_detect">
+<tt class="descclassname">lucid.</tt><tt class="descname">white_detect</tt><big>(</big><em>_cvimg</em><big>)</big><a class="headerlink" href="#lucid.white_detect" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>_cvimg</em> (OpenCV IplImage or part of OpenCV IplImage (image[:,0:150] for example)) &#8211; Image or part of image</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The numbers of white pixels in b/w image</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="smooth">
+<h2>smooth<a class="headerlink" href="#smooth" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian blur function with num for how many times the file might be treated</p>
+<dl class="function">
+<dt id="lucid.smooth">
+<tt class="descclassname">lucid.</tt><tt class="descname">smooth</tt><big>(</big><em>_src</em>, <em>_dest</em>, <em>_num</em><big>)</big><a class="headerlink" href="#lucid.smooth" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>_src</em> (IplImage) &#8211; Input image</li>
+<li><em>_dest</em> (IplImage) &#8211; Output image</li>
+<li><em>_num</em> (uint) &#8211; How much time gaussian blur have to be applied &gt;0</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Output image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="findcenter">
+<h2>findcenter<a class="headerlink" href="#findcenter" title="Permalink to this headline">¶</a></h2>
+<p>Find the coordinates of the white area in a b/w image.</p>
+<dl class="function">
+<dt id="lucid.findcenter">
+<tt class="descclassname">lucid.</tt><tt class="descname">findcenter</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#lucid.findcenter" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>image</em> (IplImage) &#8211; treated image with just the loop for finding center</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">Coordinates from the center in pixels (x,y)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/esrflogo.jpg" alt="Logo"/>
+            </a></p>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Treatment facilities functions</a><ul>
+<li><a class="reference external" href="#white-detect">white_detect</a></li>
+<li><a class="reference external" href="#smooth">smooth</a></li>
+<li><a class="reference external" href="#findcenter">findcenter</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="CenteringCode.html"
+                                  title="previous chapter">Centering functions</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="LMCode.html"
+                                  title="next chapter">loopmesh. The loop meshing</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/FacilitiesCode.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LMCode.html" title="loopmesh. The loop meshing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="CenteringCode.html" title="Centering functions"
+             >previous</a> |</li>
+        <li><a href="index.html">LUCID v1.0 documentation</a> &raquo;</li>
+          <li><a href="APIref.html" >LUCID API Reference</a> &raquo;</li>
+          <li><a href="LCCode.html" >loopcen. The loop centering</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2013, ESRF.
+      Last updated on Mar 20, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>
