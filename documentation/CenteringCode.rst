@@ -12,43 +12,6 @@ Centering functions
 
     .. autofunction:: lucid.find_loop
 
-    find_loop_byimg
-    ===============
-    
-    Launch detection with the pretreatment algorithm and a path for input image
-
-    Pretreament algorithm explanations are available in find_loop function
-
-    .. autofunction:: lucid.find_loop_byimg
-
-    find_loop_byimg_testlauncher
-    ============================
-    
-    Special launch for unittests
-
-    .. autofunction:: lucid.find_loop_byimg_testlauncher
-
-    loop_detection_array
-    ====================
-
-    Lauch detection of the loop with an array
-
-    Convert numpy array to an IplImage (Opencv format) and lauch loop_detection
-
-
-    .. autofunction:: lucid.loop_detection_array
-
-    loop_detection_path
-    ===================
-
-    `Lauch detection of the loop with the image path`
-
-    Load the image into an IplImage (Opencv format) and launch loop_detection
-    
-    |    
-
-    .. autofunction:: lucid.loop_detection_path
-    
     loop_detection
     ==============
 

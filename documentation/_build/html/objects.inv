@@ -1,13 +1,8 @@
 # Sphinx inventory version 1
 # Project: LUCID
 # Version: 1.0
-lucid mod CenteringCode.html
-lucid.find_loop_byimg function CenteringCode.html
-lucid.loop_detection_path function CenteringCode.html
+lucid mod FacilitiesCode.html
 lucid.white_detect function FacilitiesCode.html
-lucid.find_loop_byimg_testlauncher function CenteringCode.html
-lucid.smooth function FacilitiesCode.html
-lucid.loop_detection function CenteringCode.html
-lucid.findcenter function FacilitiesCode.html
-lucid.loop_detection_array function CenteringCode.html
 lucid.find_loop function CenteringCode.html
+lucid.loop_detection function CenteringCode.html
+lucid.smooth function FacilitiesCode.html

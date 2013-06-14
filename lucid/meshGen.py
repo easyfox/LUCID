@@ -35,7 +35,7 @@ def generate_meshing_info(imgInfo,method = LUCID_RECT_BBOX,showVisuals=False,zoo
     :type showVisuals: Boolean
     :param zoom: Zoom level
     :type zoom: uint
-    :param virtCenter: A virtual center if reqal center use is not wanted
+    :param virtCenter: A virtual center if real center use is not wanted
     :type virtCenter: Tuple (uint,uint)
 
     :returns: (label,x,y) result from loop_detection function
@@ -91,7 +91,7 @@ def virtualCenterTreatment(image,virtCenter):
     """ 
 
     realCenter =  (image.width//2,image.height//2)
-    if virtCenter ==(-1,-1):
+    if virtCenter ==(-1,-1) or virtCenter == None:
         return realCenter
     else:
         x=virtCenter[0]
@@ -311,7 +311,7 @@ def fitLoop(storage,storageInfo,image,virtCenter):
     while len(warningList) >= 1:
         boolR = checkConsistancy(image,storage,storageInfo,warningList,center,warningList[0])
         del(warningList[warningList.index(warningList[0])])    
-    #print 'achtungicht',list(set(warningList))
+    #print 'WarningList',list(set(warningList))
     '''
     PointArray = cv.CreateMat(1,len(storage),cv.CV_32FC2)
     for num in range(len(storage)):
@@ -368,7 +368,7 @@ def checkConsistancy(image,storage,storageInfo,warningList,center,iden):
                  ecartL += 1
              #Check if the ref after the first ref is not in list and define a length with these two ref
              elif (indexL + 1)%len(storage) not in warningList:
-                 #Explain TODO
+                 #Length of the first ref added with the absolute value of the difference between the first ref and the second ref lengths
                  lengthPropL = math.sqrt(((storage[indexL][0]-center[0])*(storage[indexL][0]-center[0]))+((storage[indexL][1]-center[1])*(storage[indexL][1]-center[1]))) + abs((math.sqrt(((storage[indexL][0]-center[0])*(storage[indexL][0]-center[0]))+((storage[indexL][1]-center[1])*(storage[indexL][1]-center[1]))))-(math.sqrt(((storage[(indexL + 1)%len(storage)][0]-center[0])*(storage[(indexL + 1)%len(storage)][0]-center[0]))+((storage[(indexL + 1)%len(storage)][1]-center[1])*(storage[(indexL + 1)%len(storage)][1]-center[1])))))
                  break
              #if the first ref is ok but not the second one, define a length based only on the first one

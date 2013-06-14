@@ -59,30 +59,7 @@
 <p>The pretreat algorithm does a first work on the original image to light up the background and improve the recognition process. Blabla.</p>
 <dl class="function">
 <dt id="lucid.find_loop">
-<tt class="descclassname">lucid.</tt><tt class="descname">find_loop</tt><big>(</big><em>_numpyarray</em>, <em>zoom=0</em><big>)</big><a class="headerlink" href="#lucid.find_loop" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>_numpyarray</em> (Numpy Array) &#8211; Array which represents the input image in grayscale</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="find-loop-byimg">
-<h2>find_loop_byimg<a class="headerlink" href="#find-loop-byimg" title="Permalink to this headline">¶</a></h2>
-<p>Launch detection with the pretreatment algorithm and a path for input image</p>
-<p>Pretreament algorithm explanations are available in find_loop function</p>
-<dl class="function">
-<dt id="lucid.find_loop_byimg">
-<tt class="descclassname">lucid.</tt><tt class="descname">find_loop_byimg</tt><big>(</big><em>_img</em>, <em>showVisuals=0</em><big>)</big><a class="headerlink" href="#lucid.find_loop_byimg" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">lucid.</tt><tt class="descname">find_loop</tt><big>(</big><em>imgInfo</em>, <em>showVisuals=False</em>, <em>zoom=0</em>, <em>testingProc=False</em>, <em>faceFindProc=False</em><big>)</big><a class="headerlink" href="#lucid.find_loop" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -91,84 +68,16 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><em>_img</em> (String) &#8211; Path of the input image</li>
-<li><em>showVisuals</em> &#8211; Show OpenCv visuals for testing and debug</li>
+<li><em>imgInfo</em> (String or Numpy array) &#8211; Information about the input image. Two types allowed yet : Image path or Numpy array</li>
+<li><em>showVisuals</em> (Boolean) &#8211; Display for debug</li>
+<li><em>zoom</em> (uint) &#8211; Zoom level</li>
+<li><em>faceFindProc</em> (Boolean) &#8211; For face finding procedure</li>
+<li><em>testingProc</em> (Boolean) &#8211; For testing procedure.</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(label,x,y) result from loop_detection function</p>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Return from loop detection (label,x,y). If it is a testing procedure, the return format is different (imageWidth, imageHeight, [loop detection function common return])</p>
 </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="find-loop-byimg-testlauncher">
-<h2>find_loop_byimg_testlauncher<a class="headerlink" href="#find-loop-byimg-testlauncher" title="Permalink to this headline">¶</a></h2>
-<p>Special launch for unittests</p>
-<dl class="function">
-<dt id="lucid.find_loop_byimg_testlauncher">
-<tt class="descclassname">lucid.</tt><tt class="descname">find_loop_byimg_testlauncher</tt><big>(</big><em>_img</em><big>)</big><a class="headerlink" href="#lucid.find_loop_byimg_testlauncher" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>_img</em> (String) &#8211; Path of the input image</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(width,height,(label,x,y)) result from loop_detection function usable by unittests</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="loop-detection-array">
-<h2>loop_detection_array<a class="headerlink" href="#loop-detection-array" title="Permalink to this headline">¶</a></h2>
-<p>Lauch detection of the loop with an array</p>
-<p>Convert numpy array to an IplImage (Opencv format) and lauch loop_detection</p>
-<dl class="function">
-<dt id="lucid.loop_detection_array">
-<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection_array</tt><big>(</big><em>_imgarr</em><big>)</big><a class="headerlink" href="#lucid.loop_detection_array" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>imgarr</em> (Numpy Array) &#8211; Array which represents the input image in grayscale</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="loop-detection-path">
-<h2>loop_detection_path<a class="headerlink" href="#loop-detection-path" title="Permalink to this headline">¶</a></h2>
-<p><cite>Lauch detection of the loop with the image path</cite></p>
-<p>Load the image into an IplImage (Opencv format) and launch loop_detection</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<dl class="function">
-<dt id="lucid.loop_detection_path">
-<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection_path</tt><big>(</big><em>_imc_path</em>, <em>showVisuals=0</em><big>)</big><a class="headerlink" href="#lucid.loop_detection_path" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>imc_path</em> (String) &#8211; Input image path</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
 </tr>
 </tbody>
 </table>
@@ -199,7 +108,7 @@
 </div>
 <dl class="function">
 <dt id="lucid.loop_detection">
-<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection</tt><big>(</big><em>_img</em><big>)</big><a class="headerlink" href="#lucid.loop_detection" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">lucid.</tt><tt class="descname">loop_detection</tt><big>(</big><em>imgInfo</em>, <em>showVisuals=False</em>, <em>zoom=0</em><big>)</big><a class="headerlink" href="#lucid.loop_detection" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -207,9 +116,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>img</em> (IplImage (OpenCV Image type)) &#8211; Image in grayscale</td>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>imgInfo</em> (String or Numpy array) &#8211; Information about the input image. Two types allowed yet : Image path or Numpy array</li>
+<li><em>showVisuals</em> (Boolean) &#8211; Display for debug</li>
+<li><em>zoom</em> (uint) &#8211; Zoom level</li>
+</ul>
+</td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">(label,x,y) result from loop_detection function</td>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(label,x,y) result from loop_detection function</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -231,10 +146,6 @@
             <ul>
 <li><a class="reference external" href="#">Centering functions</a><ul>
 <li><a class="reference external" href="#find-loop">find_loop</a></li>
-<li><a class="reference external" href="#find-loop-byimg">find_loop_byimg</a></li>
-<li><a class="reference external" href="#find-loop-byimg-testlauncher">find_loop_byimg_testlauncher</a></li>
-<li><a class="reference external" href="#loop-detection-array">loop_detection_array</a></li>
-<li><a class="reference external" href="#loop-detection-path">loop_detection_path</a></li>
 <li><a class="reference external" href="#loop-detection">loop_detection</a></li>
 </ul>
 </li>
@@ -290,7 +201,7 @@
     </div>
     <div class="footer">
       &copy; Copyright 2013, ESRF.
-      Last updated on Mar 20, 2013.
+      Last updated on Jun 13, 2013.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
     </div>
   </body>

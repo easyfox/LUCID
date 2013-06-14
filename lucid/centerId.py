@@ -234,18 +234,17 @@ def find_loop_mesh(imgInfo,showVisuals=False,zoom=0,virtCenter=(-1,-1)):
         yres = yrestemp2 - ((yrestemp2-yrestemp)//2)
     if showVisuals:
         for num in range(len(store)):
-             cv.Line( image3, virtCenter, store[num],cv.Scalar( 120, 120, 120 ),2,8 );
-	cv.Line( imageClone, (xres-3,yres-3), (xres+3,yres+3),cv.Scalar( 120, 120, 120 ),2,8 );
-	cv.Line( imageClone, (xres-3,yres+3), (xres+3,yres-3),cv.Scalar( 120, 120, 120 ),2,8 );
-
-        cv.Line( imageClone, (virtCenter[0],virtCenter[1]-3), (virtCenter[0],virtCenter[1]+3),cv.Scalar( 120, 120, 120 ),2,8 );
-	cv.Line( imageClone, (virtCenter[0]-3,virtCenter[1]), (virtCenter[0]+3,virtCenter[1]),cv.Scalar( 120, 120, 120 ),2,8 );
+            cv.Line(image3,virtCenter,store[num],cv.Scalar(120,120,120),2,8)
+        cv.Line(imageClone,(xres-3,yres-3),(xres+3,yres+3),cv.Scalar(120,120,120),2,8)
+        cv.Line(imageClone,(xres-3,yres+3),(xres+3,yres-3),cv.Scalar(120,120,120),2,8)
+        cv.Line(imageClone,(virtCenter[0],virtCenter[1]-3),(virtCenter[0],virtCenter[1]+3),cv.Scalar(120,120,120),2,8)
+        cv.Line(imageClone,(virtCenter[0]-3,virtCenter[1]),(virtCenter[0]+3,virtCenter[1]),cv.Scalar(120,120,120),2,8)
         #real center
-        cv.Line( imageClone, ((659//2),(463//2)-15), ((659//2),(463//2)+15),cv.Scalar( 120, 120, 120 ),2,8 );
-        cv.Line( imageClone, ((659//2)-15,(463//2)), ((659//2)+15,(463//2)),cv.Scalar( 120, 120, 120 ),2,8 );
+        cv.Line(imageClone,((659//2),(463//2)-15),((659//2),(463//2)+15),cv.Scalar(120,120,120),2,8)
+        cv.Line(imageClone,((659//2)-15,(463//2)),((659//2)+15,(463//2)),cv.Scalar(120,120,120),2,8)
 
         displayCv(('Resultat',imageClone),('RaysVisu',image3))
-	cv.WaitKey(0)
+        cv.WaitKey(0)
     return "meshing",xres,yres
     
 #Detection of degrees for the face's loop in image

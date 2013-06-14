@@ -10,9 +10,9 @@ The LUCID library (Loops and "`Micro`" Crytals IDentifier) provides some tools a
 
 It was created to work on loops and crystals on beem lines.
 
-One feature has been implemented yet:
+Two feature has been implemented yet:
 
 - Tools for loop centering
-
+- Tools for bounding box generation for loop meshing
 
 
