@@ -8,6 +8,7 @@ setup(name='LUCID',
       author='Etienne Francois',
       author_email='etienne.francois@esrf.fr',
       packages=['lucid'],
+      package_data={'lucid':['reference.png']},
       install_requires=[
       'Python<=2.7',
       'Opencv>=2.1',
